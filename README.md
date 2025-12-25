@@ -1,3 +1,3 @@
 ## GROKKING: GENERALIZATION BEYOND OVERFITTING ON SMALL ALGORITHMIC DATASETS
 
-Replicating paper (https://arxiv.org/pdf/2201.02177)
+Replicating paper [https://arxiv.org/pdf/2201.02177]
