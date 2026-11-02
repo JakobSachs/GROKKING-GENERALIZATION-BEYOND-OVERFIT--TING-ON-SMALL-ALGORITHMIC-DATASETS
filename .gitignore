@@ -8,3 +8,6 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Frozen experiment outputs; provenance receipts/results are tracked separately.
+artifacts/
