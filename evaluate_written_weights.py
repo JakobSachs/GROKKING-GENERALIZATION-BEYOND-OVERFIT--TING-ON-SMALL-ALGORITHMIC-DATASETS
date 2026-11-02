@@ -101,9 +101,11 @@ def evaluate(model: Transformer) -> Evaluation:
     )
     if logits.shape != (MODULUS**2, MODULUS + 1):
         raise ValueError("unexpected model output shape")
-    predictions = logits.argmax(axis=1)
+    finite_rows = np.isfinite(logits).all(axis=1)
+    # Invalid rows have no prediction; argmax(NaN) must not earn accidental credit.
+    predictions = np.where(finite_rows, logits.argmax(axis=1), -1)
     correct = predictions == expected
-    finite = bool(np.isfinite(logits).all())
+    finite = bool(finite_rows.all())
     rows = np.arange(len(expected))
     other = logits.copy()
     other[rows, expected] = -np.inf

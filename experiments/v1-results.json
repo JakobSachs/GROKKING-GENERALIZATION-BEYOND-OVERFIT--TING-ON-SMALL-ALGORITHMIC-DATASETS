@@ -116,8 +116,17 @@
     ]
   },
   "receipt_sha256": "f477b694353d9c385e4bf497b6ea662ea9d707026387b3224a586de52994c6b5",
+  "reviewed_evaluation_sha256": "cde35d8837e5cbda5db62dd2a3b51143837635bab82c6557261660500c009afe",
+  "reviewed_evaluator_sha256": "4c62015c3aaec986deda55ef223f85845420fbb48bcba5f133aa48e531f15c99",
   "source_sha256": {
     "grokking.py": "32a946ad312370621e974e0a90c92f5248dfe298d23910dd138f66b5129495d9",
     "transf.py": "97a7e02934f0709d0ce389a44dac3654a5ef9251ccd6035f00d42a4aced83bca"
+  },
+  "verification": {
+    "fresh_checkout_reconstruction": "exact checkpoint and manifest bytes matched original receipt before inference",
+    "mypy": "passed",
+    "ruff": "passed",
+    "source_statement_coverage_percent": 98,
+    "unittests": 15
   }
 }

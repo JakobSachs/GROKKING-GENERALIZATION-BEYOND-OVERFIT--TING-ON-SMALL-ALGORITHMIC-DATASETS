@@ -106,6 +106,9 @@ class InferenceTests(unittest.TestCase):
         result = evaluator.evaluate(model)
         self.assertFalse(result.finite_logits)
         self.assertIsNone(result.minimum_margin)
+        self.assertEqual(result.correct, 0)
+        self.assertEqual(result.unique_predictions, [-1])
+        self.assertEqual(len(result.mismatches), MODULUS**2)
 
 
 class ArtifactTests(unittest.TestCase):

@@ -35,7 +35,7 @@ CPU=1 uv run python evaluate_written_weights.py --candidate artifacts/v1 --recei
 
 Generation and evaluation refuse existing output paths. After the published v1 attempt, use a **new** directory and receipt (for example `artifacts/reproduction` and `experiments/reproduction-freeze.json`) rather than deleting or overwriting v1. The tracked receipt binds the checkpoint and manifest hashes; the manifest records the exact upstream source, compiler and configuration hashes. This is local provenance, not proof that nobody privately evaluated the algorithm beforehand.
 
-The evaluator does not import or call the weight compiler. In a fresh process it loads the checkpoint and checks all **3,844 ordered pairs**, recording mismatches, finite logits and the minimum correct-versus-runner-up logit margin. It also evaluates:
+The evaluator does not import or call the weight compiler. In a fresh process it loads the checkpoint and checks all **3,844 ordered pairs**, recording mismatches, finite logits and the minimum correct-versus-runner-up logit margin. A row with non-finite logits is counted as incorrect, with predicted token `-1`. It also evaluates:
 
 - The original randomly initialized model with seed 0.
 - The frozen model with only its first attention output matrix zeroed. This removes operand aggregation; it should predict zero for every pair and score 62/3,844.
