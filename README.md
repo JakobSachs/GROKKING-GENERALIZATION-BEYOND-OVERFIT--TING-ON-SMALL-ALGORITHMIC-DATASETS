@@ -42,6 +42,26 @@ The evaluator does not import or call the weight compiler. In a fresh process it
 
 Artifacts are local, ignored files. The first freeze receipt and a compact result record are tracked in `experiments/`. See `docs/design/written-weights.md` for the derivation, protocol and checks.
 
+### First frozen attempt
+
+| Model | Correct / total | Accuracy |
+| --- | ---: | ---: |
+| Directly written weights | 3,844 / 3,844 | 100% |
+| Original random initialization, seed 0 | 62 / 3,844 | 1.61% |
+| Written weights, aggregation ablated | 62 / 3,844 | 1.61% |
+
+The correct answer beats every other token by at least **0.0645126 logits** over the complete domain. All logits are finite. The model has 413,056 parameters; 1,505 are nonzero in this construction, including normalization gains. The candidate was frozen at commit `74a2e3cf5fef7ebc57430d07357ee9e4fc198ba9` before evaluation. The observed result is recorded in [`experiments/v1-results.json`](experiments/v1-results.json).
+
+### Verification
+
+```sh
+CPU=1 uv run python -m unittest discover -s tests -v
+uv run --with ruff ruff check experiment_config.py written_weights.py evaluate_written_weights.py tests
+uv run --with mypy mypy --follow-imports=silent --ignore-missing-imports experiment_config.py written_weights.py evaluate_written_weights.py tests
+```
+
+On a fresh checkout, the tests reconstruct the frozen artifact in a temporary directory and require its checkpoint **and manifest bytes** to match the original tracked receipt before any inference. A differing reconstruction fails rather than being accepted as a new candidate. Tests also check full-domain accuracy, serialization, seed independence, numerical failures, tamper rejection and the attention ablation.
+
 ### Scope
 
 Success means that we can deliberately program this transformer to generalize over the entire modular-addition domain. It does **not** reproduce grokking's delayed learning transition, show natural-language understanding, establish that arbitrary pretrained weights can be interpreted, or compare compute fairly against training.
