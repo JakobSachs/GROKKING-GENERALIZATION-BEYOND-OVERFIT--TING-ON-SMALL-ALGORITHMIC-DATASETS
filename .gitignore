@@ -8,3 +8,7 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Private training checkpoints and blind-run transcripts.
+artifacts/
+.pytest_cache/
