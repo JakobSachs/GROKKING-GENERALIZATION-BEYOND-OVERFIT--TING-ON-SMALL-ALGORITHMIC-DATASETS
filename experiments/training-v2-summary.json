@@ -1,0 +1,45 @@
+{
+  "actual_steps": 5000,
+  "batch_size": 512,
+  "benchmark_100_steady_seconds_per_step": 0.17322419276076956,
+  "device": "CPU",
+  "elapsed_seconds": 959.7598883337341,
+  "final_checkpoint_sha256": "faf4096494ac97c837f6115c7b2ae0e785658712ea292491c4a351c0aa83bab7",
+  "final_test": {
+    "accuracy": 1.0,
+    "loss": 0.0233727775628775
+  },
+  "final_train": {
+    "accuracy": 1.0,
+    "loss": 0.022114622831422164
+  },
+  "full_domain": {
+    "accuracy": 1.0,
+    "loss": 0.022869710028404128
+  },
+  "initial_to_final_l2": 29.508472233620918,
+  "maximum_seconds": 1800,
+  "model": {
+    "dropout": 0.1,
+    "ff_dim": 512,
+    "heads": 4,
+    "layers": 2,
+    "maxlen": 3,
+    "syms": 63,
+    "width": 128
+  },
+  "optimizer": "tinygrad.nn.optim.AdamW",
+  "optimizer_settings": "original tinygrad 0.11.0 defaults, weight_decay=1",
+  "projected_5000_seconds": 867.6178509716818,
+  "runner_sha256": "47d42a536a5bfc8322e4546210fd5daac2e7e49a8bc10aaa351e9940445225bc",
+  "seed": 0,
+  "source_sha256": {
+    "grokking.py": "32a946ad312370621e974e0a90c92f5248dfe298d23910dd138f66b5129495d9",
+    "transf.py": "97a7e02934f0709d0ce389a44dac3654a5ef9251ccd6035f00d42a4aced83bca"
+  },
+  "split_ratio": 0.4,
+  "status": "complete",
+  "steps_requested": 5000,
+  "test_size": 2307,
+  "train_size": 1537
+}

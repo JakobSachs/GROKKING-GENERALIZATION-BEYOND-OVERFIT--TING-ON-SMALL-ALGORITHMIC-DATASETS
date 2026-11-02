@@ -1,0 +1,52 @@
+{
+  "initial_context_task_leak_check": "passed",
+  "user_message_task_leak_check": "passed",
+  "fresh_context_initial_messages": 1,
+  "architecture_only_prior_recorded_before_tools": true,
+  "numerical_tool_calls": 20,
+  "numerical_tool_errors": 4,
+  "operations_used": [
+    "catalog",
+    "cosine_rows",
+    "cosine_columns",
+    "singular_values",
+    "singular_values",
+    "cosine_rows",
+    "cosine_columns",
+    "singular_values",
+    "fft_columns_abs",
+    "row_norms",
+    "fft_columns_abs",
+    "column_norms",
+    "fft_rows_abs",
+    "cosine_rows",
+    "fft_columns_abs",
+    "fft_rows_abs",
+    "column_norms",
+    "cosine_rows",
+    "cosine_columns",
+    "fft_columns_abs"
+  ],
+  "independent_evidence": {
+    "token62_vs_position2_cosine": 0.9999965612408371,
+    "token62_norm": 0.2680996835455122,
+    "position2_norm": 0.26812461246098157,
+    "position0_vs_position1_cosine": 0.9924388247006486,
+    "position0_norm": 0.06115293459216742,
+    "position1_norm": 0.062005574836888684,
+    "embedding_coordinate7_frequency7_magnitude": 0.7880190928925493,
+    "embedding_coordinate32_frequency29_magnitude": 0.7957744421528551,
+    "first3_singular_energy_fraction": 0.6785794069018468,
+    "first7_singular_energy_fraction": 0.908600957333148,
+    "ordinary_output_norm_range": [
+      1.6115988198046527,
+      1.8320048523087091
+    ],
+    "last_output_norm": 0.4896077483771463
+  },
+  "transcript_sha256": "ba9e234c65de5f3b6795ffd32e7df5099a8d9247f6d17dc5a02478d211d91e07",
+  "wire_level_initial_context_check": "passed; exactly developer plus user, no tools or history",
+  "interface_hash_check": "matched the pre-request freeze",
+  "all63_token_embedding_first3_energy_fraction": 0.6532195040891988,
+  "all63_token_embedding_first7_energy_fraction": 0.906122139132224
+}

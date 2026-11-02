@@ -1,0 +1,18 @@
+{
+  "architecture_sha256": "5258bea1f7bb13afb3369331fb8b66b964f21611824af50f4c91da9fb07a3078",
+  "checkpoint_sha256": "faf4096494ac97c837f6115c7b2ae0e785658712ea292491c4a351c0aa83bab7",
+  "exporter_sha256": "067c8bd33c644851e9d7d7c50c78a167090328a0842c57452ec3a1aef92c78fc",
+  "interface_sha256": {
+    "blind_architecture.json": "5258bea1f7bb13afb3369331fb8b66b964f21611824af50f4c91da9fb07a3078",
+    "blind_protocol.mjs": "25b0fa310a688781b9fbfb25b43d69b64c69337b234b3aac23b6f117a3a537d7",
+    "run_blind_sol.mjs": "837e670d986d57c7e69cfe4b5ec9f5458e520463ffa06d98a60ef5e7175ba788",
+    "train_checkpoint.py": "47d42a536a5bfc8322e4546210fd5daac2e7e49a8bc10aaa351e9940445225bc",
+    "weight_inspector.py": "afc24df6a41653c6026a995697cbe115c574b9bcab668a0f7d2f085b9800ee03"
+  },
+  "parameters": 413056,
+  "specimen_sha256": "12107b65545533bd99040cfa22d2c62f133cbebb7ba19b8af1368c8fda02a997",
+  "tensors": 34,
+  "training_actual_steps": 5000,
+  "training_metadata_sha256": "651f726c3feb46113447779fedcb2da2c971e8c691937429b138d500b0971629",
+  "upstream_commit": "5fe20591e86bdde7a2f4323ee0225e28b69ceb39"
+}

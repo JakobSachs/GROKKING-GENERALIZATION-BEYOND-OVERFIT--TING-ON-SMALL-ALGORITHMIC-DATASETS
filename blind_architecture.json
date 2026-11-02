@@ -1,0 +1,20 @@
+{
+  "model_type": "transformer token classifier",
+  "sequence_length": 3,
+  "token_vocabulary_size": 63,
+  "output_classes": 63,
+  "readout_position": "last input position",
+  "blocks": 2,
+  "model_width": 128,
+  "attention_heads": 4,
+  "feedforward_width": 512,
+  "activation": "ReLU",
+  "attention_mask": "none",
+  "normalization": "post-layernorm after each residual addition, with learned affine gain and bias",
+  "layernorm_epsilon": 0.00001,
+  "embedding_layout": "embed has 66 rows: the first 3 are position embeddings, followed by 63 token embeddings; each input representation is the sum of its position and token embedding",
+  "matrix_convention": "row vectors: x @ W + b; each pair of .0/.1 tensors is a weight matrix and bias; ln tensors are gain and bias",
+  "attention": "scaled dot-product attention with softmax over positions, concatenated heads, then output projection",
+  "output_projection": "final maps the last block's hidden state to class logits; no additional output bias",
+  "dropout_at_inference": false
+}
